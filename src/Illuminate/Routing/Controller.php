@@ -29,7 +29,7 @@ abstract class Controller
             ];
         }
 
-        return new ControllerMiddlewareOptions($options);
+        return new \Illuminate\Routing\ControllerMiddlewareOptions($options);
     }
 
     /**
