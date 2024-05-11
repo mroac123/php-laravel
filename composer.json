@@ -1,5 +1,5 @@
 {
-    "name": "laravell/framework",
+    "name": "php-laravel/framework",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
