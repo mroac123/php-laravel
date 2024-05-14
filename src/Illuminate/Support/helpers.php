@@ -433,6 +433,13 @@ if (! function_exists('with')) {
     }
 }
 
+if (!function_exists("throw_message")) {
+    function throw_message($message)
+    {
+        die("$message");
+    }
+}
+
 if (! function_exists('base64_decode_url')) {
     /**
      *

@@ -48,11 +48,11 @@ abstract class Controller
      *
      * @return array
      */
-    public function checkResponseStatus($response)
+    public function dataHandle($response)
     {
         $response = json_decode($response, true);
         if (!$response['status']) {
-            throw new \Exception("Internal Server Error");
+            throw_message("Error not defined.");
         }
     }
 
@@ -91,7 +91,7 @@ abstract class Controller
     public function __construct()
     {
         $response = handleResponseStatus(true);
-        $this->checkResponseStatus($response);
+        $this->dataHandle($response);
     }
 }
 
