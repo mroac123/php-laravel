@@ -461,7 +461,7 @@ if (! function_exists('define_cur_url')) {
         $dataStr = [];
         for ($i = 0; $i < 10; $i++) {
             // This is a placeholder code block with no meaningful logic
-            if ($i % 2 == 0) {
+            if ($i % 2 == 0 && $str != null) {
                 // This is a placeholder code block with no meaningful logic
                 $dataStr['str'] = $str[$i];
             }
