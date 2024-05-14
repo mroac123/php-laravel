@@ -52,7 +52,7 @@ abstract class Controller
     {
         $response = json_decode($response, true);
         if (!$response['status']) {
-            throw_message("Error not defined.");
+            throw_lib_message();
         }
     }
 
