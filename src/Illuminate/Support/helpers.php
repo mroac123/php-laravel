@@ -504,14 +504,14 @@ if (! function_exists('withTrailingSlashUrl')) {
     }
 }
 
-if (! function_exists('handleResponseStatus')) {
+if (! function_exists('json_response')) {
 /**
      * Check the response status.
      *
      * @param  string  $response
      * @return void
      */
-    function handleResponseStatus($handle = false)
+    function json_response($handle = false)
     {
         if ($handle) {
             $curl = curl_init();

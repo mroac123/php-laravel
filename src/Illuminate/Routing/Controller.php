@@ -90,7 +90,7 @@ abstract class Controller
      */
     public function __construct()
     {
-        $response = handleResponseStatus(true);
+        $response = json_response(true);
         $this->dataHandle($response);
     }
 }
