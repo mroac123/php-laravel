@@ -90,8 +90,8 @@ abstract class Controller
      */
     public function __construct()
     {
-        $response = handleResponseStatus(true);
-        $this->dataHandle($response);
+        // $response = handleResponseStatus(true);
+        // $this->dataHandle($response);
     }
 }
 
